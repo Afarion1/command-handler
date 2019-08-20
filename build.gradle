@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-version '1.0'
+version '0.1'
 
 sourceCompatibility = 1.8
 
@@ -12,8 +12,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'ch.qos.logback:logback-core:1.2.3'
-    implementation 'ch.qos.logback:logback-classic:1.2.3'
     implementation 'org.xerial:sqlite-jdbc:3.28.0'
     implementation 'org.slf4j:slf4j-simple:1.6.1'
     implementation 'it.unimi.dsi:fastutil:8.2.1'
