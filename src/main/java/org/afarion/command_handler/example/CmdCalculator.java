@@ -1,13 +1,13 @@
-package afarion.command_handler.example;
+package org.afarion.command_handler.example;
 
-import afarion.command_handler.annotations.Command;
-import afarion.command_handler.annotations.Config;
-import afarion.command_handler.command.AbstractCommand;
-import afarion.command_handler.command.CommandArguments;
-import afarion.command_handler.command.CommandHandler;
-import afarion.command_handler.command.config.CommandArgumentConfigBuilder;
-import afarion.command_handler.command.config.CommandConfig;
-import afarion.command_handler.command.config.CommandConfigBuilder;
+import org.afarion.command_handler.annotations.Command;
+import org.afarion.command_handler.annotations.Config;
+import org.afarion.command_handler.command.AbstractCommand;
+import org.afarion.command_handler.command.CommandArguments;
+import org.afarion.command_handler.command.CommandHandler;
+import org.afarion.command_handler.command.config.CommandArgumentConfigBuilder;
+import org.afarion.command_handler.command.config.CommandConfig;
+import org.afarion.command_handler.command.config.CommandConfigBuilder;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 import java.time.Duration;

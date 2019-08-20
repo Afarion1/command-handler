@@ -1,6 +1,6 @@
-package afarion.command_handler.command;
+package org.afarion.command_handler.command;
 
-import afarion.command_handler.utils.NamedThreadFactory;
+import org.afarion.command_handler.utils.NamedThreadFactory;
 import net.dv8tion.jda.core.JDA;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

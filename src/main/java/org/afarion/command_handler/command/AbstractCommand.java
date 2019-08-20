@@ -1,10 +1,10 @@
-package afarion.command_handler.command;
+package org.afarion.command_handler.command;
 
-import afarion.command_handler.annotations.Config;
-import afarion.command_handler.command.config.CommandArgumentConfig;
-import afarion.command_handler.command.config.CommandArgumentConfigBuilder;
-import afarion.command_handler.command.config.CommandConfig;
-import afarion.command_handler.command.config.CommandListType;
+import org.afarion.command_handler.annotations.Config;
+import org.afarion.command_handler.command.config.CommandArgumentConfig;
+import org.afarion.command_handler.command.config.CommandArgumentConfigBuilder;
+import org.afarion.command_handler.command.config.CommandConfig;
+import org.afarion.command_handler.command.config.CommandListType;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.utils.PermissionUtil;

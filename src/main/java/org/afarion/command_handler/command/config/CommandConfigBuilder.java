@@ -1,9 +1,9 @@
-package afarion.command_handler.command.config;
+package org.afarion.command_handler.command.config;
 
-import afarion.command_handler.command.AbstractCommand;
-import afarion.command_handler.command.CommandArguments;
-import afarion.command_handler.internal_commands.CmdCommandList;
-import afarion.command_handler.command.CommandHandlerBuilder;
+import org.afarion.command_handler.command.AbstractCommand;
+import org.afarion.command_handler.command.CommandArguments;
+import org.afarion.command_handler.internal_commands.CmdCommandList;
+import org.afarion.command_handler.command.CommandHandlerBuilder;
 import net.dv8tion.jda.core.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

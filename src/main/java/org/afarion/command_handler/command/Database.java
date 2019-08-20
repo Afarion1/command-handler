@@ -1,6 +1,6 @@
-package afarion.command_handler.command;
+package org.afarion.command_handler.command;
 
-import afarion.command_handler.command.config.CommandConfig;
+import org.afarion.command_handler.command.config.CommandConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

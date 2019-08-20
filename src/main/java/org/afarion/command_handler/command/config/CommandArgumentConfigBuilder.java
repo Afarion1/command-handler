@@ -1,7 +1,7 @@
-package afarion.command_handler.command.config;
+package org.afarion.command_handler.command.config;
 
-import afarion.command_handler.command.AbstractCommand;
-import afarion.command_handler.command.CommandArguments;
+import org.afarion.command_handler.command.AbstractCommand;
+import org.afarion.command_handler.command.CommandArguments;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
 

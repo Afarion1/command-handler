@@ -1,4 +1,4 @@
-package afarion.command_handler.command;
+package org.afarion.command_handler.command;
 
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;

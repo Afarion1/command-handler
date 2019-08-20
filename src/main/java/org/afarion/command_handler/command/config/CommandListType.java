@@ -1,4 +1,4 @@
-package afarion.command_handler.command.config;
+package org.afarion.command_handler.command.config;
 
 public enum CommandListType {
     /**

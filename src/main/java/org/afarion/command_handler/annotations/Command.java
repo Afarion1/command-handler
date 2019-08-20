@@ -1,8 +1,8 @@
-package afarion.command_handler.annotations;
+package org.afarion.command_handler.annotations;
 
-import afarion.command_handler.command.AbstractCommand;
-import afarion.command_handler.command.CommandHandler;
-import afarion.command_handler.command.config.CommandConfig;
+import org.afarion.command_handler.command.AbstractCommand;
+import org.afarion.command_handler.command.CommandHandler;
+import org.afarion.command_handler.command.config.CommandConfig;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

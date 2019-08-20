@@ -1,4 +1,4 @@
-package afarion.command_handler.command;
+package org.afarion.command_handler.command;
 
 import it.unimi.dsi.fastutil.ints.Int2DoubleMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;

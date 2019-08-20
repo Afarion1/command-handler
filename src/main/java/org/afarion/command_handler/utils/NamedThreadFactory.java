@@ -1,4 +1,4 @@
-package afarion.command_handler.utils;
+package org.afarion.command_handler.utils;
 
 import org.jetbrains.annotations.NotNull;
 
