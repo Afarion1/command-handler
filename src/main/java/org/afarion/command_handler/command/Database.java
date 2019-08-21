@@ -68,17 +68,14 @@ final class Database {
                 .collect(Collectors.toList());
 
         int affectedRowsTotal = 0;
-        String sql = "DELETE FROM UserCommandCooldown WHERE cmdName = ? AND cooledDownAfter < ?";
+        String sql = "DELETE FROM UserCommandCooldown WHERE cmdName = ? AND cooledDownAfter <= ?";
         for (CommandConfig config : configs) {
             try {
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, config.getName());
-                Duration threshold = config.getUserCooldownRecordsCleaningThreshold();
-                long thresholdMillis = threshold == null ?
-                        config.getUserCooldown().toMillis() : threshold.toMillis();
-                long cooledDownIfUsedBefore = System.currentTimeMillis() - thresholdMillis;
-                pst.setLong(2, cooledDownIfUsedBefore);
-                log.trace("Executing query {} with parameters {}, {}", sql, config.getName(), cooledDownIfUsedBefore);
+                long currentTime = System.currentTimeMillis();
+                pst.setLong(2, currentTime);
+                log.trace("Executing query {} with parameters {}, {}", sql, config.getName(), currentTime);
                 int affectedRows = pst.executeUpdate();
                 affectedRowsTotal += affectedRows;
                 log.trace("{} rows affected, {} total", affectedRows, affectedRowsTotal);
@@ -93,17 +90,14 @@ final class Database {
                 .collect(Collectors.toList());
 
 
-        sql = "DELETE FROM GuildCommandCooldown WHERE cmdName = ? AND cooledDownAfter < ?";
+        sql = "DELETE FROM GuildCommandCooldown WHERE cmdName = ? AND cooledDownAfter <= ?";
         for (CommandConfig config : configs) {
             try {
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, config.getName());
-                Duration threshold = config.getGuildCooldownRecordsCleaningThreshold();
-                long thresholdMillis = threshold == null ?
-                        config.getGuildCooldown().toMillis() : threshold.toMillis();
-                long cooledDownIfUsedBefore = System.currentTimeMillis() - thresholdMillis;
-                pst.setLong(2, cooledDownIfUsedBefore);
-                log.trace("Executing query {} with parameters {}, {}", sql, config.getName(), cooledDownIfUsedBefore);
+                long currentTime = System.currentTimeMillis();
+                pst.setLong(2, currentTime);
+                log.trace("Executing query {} with parameters {}, {}", sql, config.getName(), currentTime);
                 int affectedRows = pst.executeUpdate();
                 affectedRowsTotal += affectedRows;
                 log.trace("{} rows affected, {} total", affectedRows, affectedRowsTotal);
