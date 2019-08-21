@@ -1,7 +1,6 @@
 package org.afarion.command_handler.command.config;
 
 import net.dv8tion.jda.core.Permission;
-import org.jetbrains.annotations.Nullable;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -27,12 +26,9 @@ public final class CommandConfig {
     private final String commandArgumentsSignature;
     private final boolean cleanCooldownRecords;
     private final Duration cooldownRecordsCleaningPeriod;
-    @Nullable
-    private final Duration userCooldownRecordsCleaningThreshold;
-    @Nullable
-    private final Duration guildCooldownRecordsCleaningThreshold;
 
-    CommandConfig(List<String> nameAndAliases, String desc, String verboseDesc, CommandListType listType, Duration commandCooldown, List<Permission> discordPerms, Duration commandGuildCooldown, List<CommandArgumentConfig> arguments, boolean executeInGuildOnly, boolean rawArgs, String rawArgsName, String rawArgsDesc, boolean executeIfCantCheckCooldown, String commandArgumentsSignature, boolean cleanCooldownRecords, Duration cooldownRecordsCleaningPeriod, @Nullable Duration userCooldownRecordsCleaningThreshold, @Nullable Duration guildCooldownRecordsCleaningThreshold) {
+
+    CommandConfig(List<String> nameAndAliases, String desc, String verboseDesc, CommandListType listType, Duration commandCooldown, List<Permission> discordPerms, Duration commandGuildCooldown, List<CommandArgumentConfig> arguments, boolean executeInGuildOnly, boolean rawArgs, String rawArgsName, String rawArgsDesc, boolean executeIfCantCheckCooldown, String commandArgumentsSignature, boolean cleanCooldownRecords, Duration cooldownRecordsCleaningPeriod) {
         //keep everything immutable
         this.nameAndAliases = Collections.unmodifiableList(nameAndAliases);
         this.desc = desc;
@@ -50,8 +46,6 @@ public final class CommandConfig {
         this.commandArgumentsSignature = commandArgumentsSignature;
         this.cleanCooldownRecords = cleanCooldownRecords;
         this.cooldownRecordsCleaningPeriod = cooldownRecordsCleaningPeriod;
-        this.userCooldownRecordsCleaningThreshold = userCooldownRecordsCleaningThreshold;
-        this.guildCooldownRecordsCleaningThreshold = guildCooldownRecordsCleaningThreshold;
     }
 
     public List<String> getNameAndAliases() {
@@ -121,16 +115,5 @@ public final class CommandConfig {
     public Duration getCooldownRecordsCleaningPeriod() {
         return cooldownRecordsCleaningPeriod;
     }
-
-    @Nullable
-    public Duration getUserCooldownRecordsCleaningThreshold() {
-        return userCooldownRecordsCleaningThreshold;
-    }
-
-    @Nullable
-    public Duration getGuildCooldownRecordsCleaningThreshold() {
-        return guildCooldownRecordsCleaningThreshold;
-    }
-
 
 }

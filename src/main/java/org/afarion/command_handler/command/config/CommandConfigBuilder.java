@@ -1,12 +1,10 @@
 package org.afarion.command_handler.command.config;
 
+import net.dv8tion.jda.core.Permission;
 import org.afarion.command_handler.command.AbstractCommand;
 import org.afarion.command_handler.command.CommandArguments;
 import org.afarion.command_handler.internal_commands.CmdCommandList;
-import org.afarion.command_handler.command.CommandHandlerBuilder;
-import net.dv8tion.jda.core.Permission;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -36,10 +34,6 @@ public final class CommandConfigBuilder {
     private boolean executeIfCantCheckCooldown;
     private boolean cleanCooldownRecords;
     private Duration cooldownRecordsCleaningPeriod;
-    @Nullable
-    private Duration userCooldownRecordsCleaningThreshold;
-    @Nullable
-    private Duration guildCooldownRecordsCleaningThreshold;
 
 
     /**
@@ -80,39 +74,9 @@ public final class CommandConfigBuilder {
         this.executeIfCantCheckCooldown = false;
         this.cleanCooldownRecords = true;
         this.cooldownRecordsCleaningPeriod = Duration.ZERO;
-        this.userCooldownRecordsCleaningThreshold = null;
-        this.guildCooldownRecordsCleaningThreshold = null;
     }
 
-    /**
-     * Sets a Duration threshold which will be used instead of guild cooldown itself to decide whether a cooldown record in
-     * data base is outdated and should be removed. <br/>
-     * It should be used only if the command overrides {@link AbstractCommand#getGuildCooldown} for dynamic cooldown
-     * and outdated records cleaning is enabled.
-     *
-     * @see CommandConfigBuilder#setCleanCooldownRecords
-     * @see CommandHandlerBuilder#cleanDbOnStartup
-     */
-    public CommandConfigBuilder setGuildCooldownRecordsCleaningThreshold(Duration threshold) {
-        this.guildCooldownRecordsCleaningThreshold = threshold;
-        return this;
-    }
-
-    /**
-     * Sets a Duration threshold which will be used instead of user cooldown itself to decide whether a cooldown record in
-     * data base is outdated and should be removed. <br/>
-     * It should be used only if the command overrides {@link AbstractCommand#getUserCooldown} for dynamic cooldown
-     * and outdated records cleaning is enabled.
-     *
-     * @see CommandConfigBuilder#setCleanCooldownRecords
-     * @see CommandHandlerBuilder#cleanDbOnStartup
-     */
-    public CommandConfigBuilder setUserCooldownRecordsCleaningThreshold(Duration threshold) {
-        this.userCooldownRecordsCleaningThreshold = threshold;
-        return this;
-    }
-
-
+    //TODO implement
 //    public CommandConfigBuilder setCooldownRecordsCleaningPeriod(Duration period) {
 //        if (period == null) period = Duration.ZERO;
 //        this.cooldownRecordsCleaningPeriod = period;
@@ -299,7 +263,7 @@ public final class CommandConfigBuilder {
         List<Permission> permissionsCopy = new ArrayList<>(discordPerms);
 
 
-        return new CommandConfig(aliasesCopy, desc, verboseDesc, listType, commandCooldown, permissionsCopy, commandGuildCooldown, finalArgs, executeInGuildOnly, rawArgs, rawArgsName, rawArgsDesc, executeIfCantCheckCooldown, commandArgumentsSignature, cleanCooldownRecords, cooldownRecordsCleaningPeriod, userCooldownRecordsCleaningThreshold, guildCooldownRecordsCleaningThreshold);
+        return new CommandConfig(aliasesCopy, desc, verboseDesc, listType, commandCooldown, permissionsCopy, commandGuildCooldown, finalArgs, executeInGuildOnly, rawArgs, rawArgsName, rawArgsDesc, executeIfCantCheckCooldown, commandArgumentsSignature, cleanCooldownRecords, cooldownRecordsCleaningPeriod);
     }
 
     private void validate(List<CommandArgumentConfig> args) {
