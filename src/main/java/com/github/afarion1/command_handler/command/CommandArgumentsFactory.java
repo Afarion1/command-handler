@@ -1,6 +1,6 @@
-package org.afarion.command_handler.command;
+package com.github.afarion1.command_handler.command;
 
-import org.afarion.command_handler.command.config.CommandArgumentConfig;
+import com.github.afarion1.command_handler.command.config.CommandArgumentConfig;
 import it.unimi.dsi.fastutil.ints.*;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import org.apache.commons.lang3.StringUtils;

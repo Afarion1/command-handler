@@ -1,13 +1,13 @@
-package org.afarion.command_handler.command;
+package com.github.afarion1.command_handler.command;
 
-import org.afarion.command_handler.annotations.Command;
-import org.afarion.command_handler.annotations.Config;
-import org.afarion.command_handler.command.config.CommandArgumentConfig;
-import org.afarion.command_handler.command.config.CommandConfig;
-import org.afarion.command_handler.command.config.CommandConfigBuilder;
-import org.afarion.command_handler.command.config.CommandListType;
-import org.afarion.command_handler.internal_commands.CmdCommandList;
-import org.afarion.command_handler.internal_commands.CmdInspectCommand;
+import com.github.afarion1.command_handler.internal_commands.CmdCommandList;
+import com.github.afarion1.command_handler.internal_commands.CmdInspectCommand;
+import com.github.afarion1.command_handler.annotations.Command;
+import com.github.afarion1.command_handler.annotations.Config;
+import com.github.afarion1.command_handler.command.config.CommandArgumentConfig;
+import com.github.afarion1.command_handler.command.config.CommandConfig;
+import com.github.afarion1.command_handler.command.config.CommandConfigBuilder;
+import com.github.afarion1.command_handler.command.config.CommandListType;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;

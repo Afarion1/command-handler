@@ -1,4 +1,4 @@
-package org.afarion.command_handler.command.config;
+package com.github.afarion1.command_handler.command.config;
 
 import net.dv8tion.jda.core.Permission;
 

@@ -1,13 +1,13 @@
-package org.afarion.command_handler.internal_commands;
+package com.github.afarion1.command_handler.internal_commands;
 
-import org.afarion.command_handler.annotations.Config;
-import org.afarion.command_handler.command.AbstractCommand;
-import org.afarion.command_handler.command.CommandArguments;
-import org.afarion.command_handler.command.CommandHandler;
-import org.afarion.command_handler.command.config.CommandArgumentConfigBuilder;
-import org.afarion.command_handler.command.config.CommandConfig;
-import org.afarion.command_handler.command.config.CommandConfigBuilder;
-import org.afarion.command_handler.command.config.CommandListType;
+import com.github.afarion1.command_handler.annotations.Config;
+import com.github.afarion1.command_handler.command.AbstractCommand;
+import com.github.afarion1.command_handler.command.CommandArguments;
+import com.github.afarion1.command_handler.command.CommandHandler;
+import com.github.afarion1.command_handler.command.config.CommandArgumentConfigBuilder;
+import com.github.afarion1.command_handler.command.config.CommandConfig;
+import com.github.afarion1.command_handler.command.config.CommandConfigBuilder;
+import com.github.afarion1.command_handler.command.config.CommandListType;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.MessageEmbed;

@@ -1,9 +1,9 @@
-package org.afarion.command_handler.command.config;
+package com.github.afarion1.command_handler.command.config;
 
+import com.github.afarion1.command_handler.command.AbstractCommand;
+import com.github.afarion1.command_handler.command.CommandArguments;
+import com.github.afarion1.command_handler.internal_commands.CmdCommandList;
 import net.dv8tion.jda.core.Permission;
-import org.afarion.command_handler.command.AbstractCommand;
-import org.afarion.command_handler.command.CommandArguments;
-import org.afarion.command_handler.internal_commands.CmdCommandList;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.Duration;
