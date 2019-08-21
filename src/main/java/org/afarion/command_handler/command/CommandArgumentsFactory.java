@@ -46,13 +46,13 @@ final class CommandArgumentsFactory {
                     }
                 } else {
                     int symbolsTaken;
-                    symbolsTaken = processMultiWordArgument(wrongArgsIds, strArgValues, strArgs, argCfg, event, command);
+                    symbolsTaken = processCustomChoosingArg(wrongArgsIds, strArgValues, strArgs, argCfg, event, command);
                     if (symbolsTaken > 0) {
                         strArgs = strArgs.substring(symbolsTaken);
                         continue;
                     }
 
-                    symbolsTaken = processMultiWordQuotesArg(wrongArgsIds, strArgValues, strArgs, argCfg);
+                    symbolsTaken = processQuotesArg(wrongArgsIds, strArgValues, strArgs, argCfg);
                     if (symbolsTaken > 0) {
                         strArgs = symbolsTaken < strArgs.length() ? strArgs.substring(symbolsTaken) : "";
                     }
@@ -72,10 +72,11 @@ final class CommandArgumentsFactory {
         return new CommandArguments(wrongArgsIds, strArgValues, doubleArgValues, strArgs);
     }
 
+
     /**
-     * @return returns the same value if nothing was chosen, otherwise returns id of last word chosen + 1
+     * @return symbols taken
      */
-    private static int processMultiWordQuotesArg(IntList wrongArgsIds, Int2ObjectMap<String> strArgValues, String strArgs, CommandArgumentConfig argCfg) {
+    private static int processQuotesArg(IntList wrongArgsIds, Int2ObjectMap<String> strArgValues, String strArgs, CommandArgumentConfig argCfg) {
         if (argCfg.isInQuotes()) {
             int openingQuoteIndex = strArgs.indexOf('"');
 
@@ -106,9 +107,9 @@ final class CommandArgumentsFactory {
     }
 
     /**
-     * @return index of last argument chosen
+     * @return symbols taken
      */
-    private static int processMultiWordArgument(IntList wrongArgsIds, Int2ObjectMap<String> strArgValues, String strArgs, CommandArgumentConfig argCfg, MessageReceivedEvent event, AbstractCommand cmd) {
+    private static int processCustomChoosingArg(IntList wrongArgsIds, Int2ObjectMap<String> strArgValues, String strArgs, CommandArgumentConfig argCfg, MessageReceivedEvent event, AbstractCommand cmd) {
         if (argCfg.isMultiWordChoosingEnabled()) {
             int id = argCfg.getId();
             int symbolsChosen = cmd.chooseArgumentSymbols(event, strArgs, id);
