@@ -26,16 +26,17 @@ public final class CommandHandlerBuilder {
 
     private static final Logger log = LoggerFactory.getLogger(CommandHandlerBuilder.class);
 
-    public JDA jda = null;
-    public String commandsPrefix = "~";
-    public boolean enableCommandList = true;
-    public boolean enableInspectCommand = true;
-    public boolean cleanDbOnStartup = true;
-    public Color commandListColor = Color.yellow;
-    public Color inspectCommandColor = Color.yellow;
-    public Color errorColor = Color.red;
-    public ExecutorService executor = null;
     private final String fileName = "command_handler.properties";
+
+    JDA jda = null;
+    String commandsPrefix = "~";
+    boolean enableCommandList = true;
+    boolean enableInspectCommand = true;
+    boolean cleanDbOnStartup = true;
+    Color commandListColor = Color.yellow;
+    Color inspectCommandColor = Color.yellow;
+    Color errorColor = Color.red;
+    ExecutorService executor = null;
 
 
     /**
