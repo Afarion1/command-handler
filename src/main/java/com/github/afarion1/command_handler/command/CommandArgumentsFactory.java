@@ -81,17 +81,17 @@ final class CommandArgumentsFactory {
             int openingQuoteIndex = strArgs.indexOf('"');
 
             if (openingQuoteIndex > -1 && strArgs.length() > 1) {
-                int closingQuoteIndex = strArgs.substring(openingQuoteIndex + 1).indexOf('"');
+                int closingQuoteIndex = strArgs.substring(openingQuoteIndex + 1).indexOf('"') + openingQuoteIndex + 1;
 
-                if (closingQuoteIndex > -1) {
-                    String betweenQuotes = strArgs.substring(1, closingQuoteIndex + 1);
+                if (closingQuoteIndex > openingQuoteIndex) {
+                    String betweenQuotes = strArgs.substring(openingQuoteIndex + 1 , closingQuoteIndex);
                     log.trace("Found multi-word in quotes argument {}: {}", argCfg.getArgumentName(), betweenQuotes);
 
                     testStringValidators(wrongArgsIds, betweenQuotes, argCfg);
 
                     strArgValues.put(argCfg.getId(), betweenQuotes);
 
-                    return  betweenQuotes.length() + 2;
+                    return  closingQuoteIndex + 1;
                 } else {
                     log.debug("Closing quote wasn't found in argument {}", argCfg.getArgumentName());
                 }
