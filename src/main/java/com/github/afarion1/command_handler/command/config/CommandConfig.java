@@ -1,6 +1,6 @@
 package com.github.afarion1.command_handler.command.config;
 
-import net.dv8tion.jda.core.Permission;
+import net.dv8tion.jda.api.Permission;
 
 import java.time.Duration;
 import java.util.Collections;

@@ -1,11 +1,13 @@
 package com.github.afarion1.command_handler.command.config;
 
-import com.github.afarion1.command_handler.command.CommandArguments;
 import com.github.afarion1.command_handler.command.AbstractCommand;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import com.github.afarion1.command_handler.command.CommandArguments;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.DoublePredicate;
 import java.util.function.Predicate;
 

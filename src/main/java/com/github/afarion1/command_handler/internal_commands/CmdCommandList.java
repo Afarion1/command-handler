@@ -8,10 +8,10 @@ import com.github.afarion1.command_handler.command.config.CommandArgumentConfigB
 import com.github.afarion1.command_handler.command.config.CommandConfig;
 import com.github.afarion1.command_handler.command.config.CommandConfigBuilder;
 import com.github.afarion1.command_handler.command.config.CommandListType;
-import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.entities.MessageChannel;
-import net.dv8tion.jda.core.entities.MessageEmbed;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.MessageChannel;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

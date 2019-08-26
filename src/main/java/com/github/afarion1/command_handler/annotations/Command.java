@@ -1,7 +1,7 @@
 package com.github.afarion1.command_handler.annotations;
 
-import com.github.afarion1.command_handler.command.CommandHandler;
 import com.github.afarion1.command_handler.command.AbstractCommand;
+import com.github.afarion1.command_handler.command.CommandHandler;
 import com.github.afarion1.command_handler.command.config.CommandConfig;
 
 import java.lang.annotation.ElementType;

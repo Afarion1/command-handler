@@ -1,13 +1,13 @@
 package com.github.afarion1.command_handler.command;
 
-import com.github.afarion1.command_handler.command.config.CommandArgumentConfigBuilder;
 import com.github.afarion1.command_handler.annotations.Config;
 import com.github.afarion1.command_handler.command.config.CommandArgumentConfig;
+import com.github.afarion1.command_handler.command.config.CommandArgumentConfigBuilder;
 import com.github.afarion1.command_handler.command.config.CommandConfig;
 import com.github.afarion1.command_handler.command.config.CommandListType;
-import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.utils.PermissionUtil;
+import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.internal.utils.PermissionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

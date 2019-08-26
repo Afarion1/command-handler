@@ -2,7 +2,7 @@ package com.github.afarion1.command_handler.command;
 
 import com.github.afarion1.command_handler.command.config.CommandArgumentConfig;
 import it.unimi.dsi.fastutil.ints.*;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

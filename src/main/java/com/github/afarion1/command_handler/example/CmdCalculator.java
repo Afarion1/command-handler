@@ -8,7 +8,7 @@ import com.github.afarion1.command_handler.command.CommandHandler;
 import com.github.afarion1.command_handler.command.config.CommandArgumentConfigBuilder;
 import com.github.afarion1.command_handler.command.config.CommandConfig;
 import com.github.afarion1.command_handler.command.config.CommandConfigBuilder;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.time.Duration;
 

@@ -1,7 +1,7 @@
 package com.github.afarion1.command_handler.command;
 
 import com.github.afarion1.command_handler.utils.NamedThreadFactory;
-import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.api.JDA;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,18 +1,18 @@
 package com.github.afarion1.command_handler.command;
 
-import com.github.afarion1.command_handler.internal_commands.CmdCommandList;
-import com.github.afarion1.command_handler.internal_commands.CmdInspectCommand;
 import com.github.afarion1.command_handler.annotations.Command;
 import com.github.afarion1.command_handler.annotations.Config;
 import com.github.afarion1.command_handler.command.config.CommandArgumentConfig;
 import com.github.afarion1.command_handler.command.config.CommandConfig;
 import com.github.afarion1.command_handler.command.config.CommandConfigBuilder;
 import com.github.afarion1.command_handler.command.config.CommandListType;
+import com.github.afarion1.command_handler.internal_commands.CmdCommandList;
+import com.github.afarion1.command_handler.internal_commands.CmdInspectCommand;
 import it.unimi.dsi.fastutil.ints.IntList;
-import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.jetbrains.annotations.NotNull;
 import org.reflections.Reflections;
