@@ -37,8 +37,8 @@ public final class CommandConfigBuilder {
 
 
     /**
-     * Creates a configuration builder for a {@link AbstractCommand}.<br/>
-     * The default setting are following:<br/>
+     * Creates a configuration builder for a {@link AbstractCommand}.<br>
+     * The default setting are following:<br>
      * <ul>
      * <li>has no description</li>
      * <li>is visible in list of commands, etc.</li>
@@ -84,7 +84,7 @@ public final class CommandConfigBuilder {
 //    }
 
     /**
-     * Should outdated records of cooldown of the command be cleared.<br/>
+     * Should outdated records of cooldown of the command be cleared.<br>
      * Default is true.
      */
     public CommandConfigBuilder setCleanCooldownRecords(boolean bool) {
@@ -94,7 +94,7 @@ public final class CommandConfigBuilder {
 
     /**
      * Setting to true will allow the command to be used when there are problems with DB. If the command has no cooldown,
-     * it will be executed regardless.<br/>
+     * it will be executed regardless.<br>
      * Default is false.
      */
     public CommandConfigBuilder setExecuteIfCantCheckOrSaveCooldown(boolean bool) {
@@ -168,9 +168,9 @@ public final class CommandConfigBuilder {
 
     /**
      * Adds an alias to the command which will work like additional name.
-     * <br/>
+     * <br>
      * If a message from discord matches several different command names or aliases, then the longest one will be  processes.
-     * <br/>
+     * <br>
      * To avoid confusion it is generally better to not make overlapping aliases if the command has arguments.
      * For example, <i>pour water</i> and <i>pour</i>, let's say the command takes one argument, which is name of target.
      * Then, if the name of the target is water, the command will start processing without arguments, because the alias

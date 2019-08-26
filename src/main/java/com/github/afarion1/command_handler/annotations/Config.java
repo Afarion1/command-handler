@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 import java.util.function.Function;
 
 /**
- * Used to mark configuration object {@link CommandConfig} for command registration.<br/>
+ * Used to mark configuration object {@link CommandConfig} for command registration.<br>
  * The annotation is expected to be inside of a subclass of {@link AbstractCommand}
  * next to a field containing {@link CommandConfig} or a static method returning the
  * {@link CommandConfig}.

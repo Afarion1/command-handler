@@ -11,10 +11,10 @@ import java.lang.annotation.Target;
 import java.util.function.Function;
 
 /**
- * Used to register a subclass of {@link AbstractCommand} to be handled.<br/>
+ * Used to register a subclass of {@link AbstractCommand} to be handled.<br>
  * The command is expected to have a constructor with a single parameter of {@link CommandHandler}
- * and a {@link CommandConfig} instance inside a field/method annotated with {@link Config}.<br/>
- * To use other constructor, use {@link CommandHandler#registerCommand(Class, Function, CommandConfig)} instead <br/>
+ * and a {@link CommandConfig} instance inside a field/method annotated with {@link Config}.<br>
+ * To use other constructor, use {@link CommandHandler#registerCommand(Class, Function, CommandConfig)} instead <br>
  * @see Config
  * @see CommandHandler#registerCommand(Class, Function, CommandConfig)
  */

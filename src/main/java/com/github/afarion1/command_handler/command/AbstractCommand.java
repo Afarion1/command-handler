@@ -100,7 +100,7 @@ public abstract class AbstractCommand {
 
     /**
      * Could be overridden so {@link #getUserCooldown(MessageReceivedEvent)}
-     * doesn't get called to determine if there's any cooldown.<br/>
+     * doesn't get called to determine if there's any cooldown.<br>
      * Could be useful if the {@link #getUserCooldown(MessageReceivedEvent)}
      * is overridden and has heavy operations.
      * @param event context for overriding
@@ -112,7 +112,7 @@ public abstract class AbstractCommand {
 
     /**
      * Could be overridden so {@link #getGuildCooldown(MessageReceivedEvent)}
-     * doesn't get called to determine if there's any cooldown.<br/>
+     * doesn't get called to determine if there's any cooldown.<br>
      * Could be useful if the {@link #getGuildCooldown(MessageReceivedEvent)}
      * is overridden and has heavy operations.
      * @param event context for overriding
@@ -136,7 +136,7 @@ public abstract class AbstractCommand {
     }
 
     /**
-     * Could be overridden for dynamic cooldown calculation instead of static {@link Config}.<br/>
+     * Could be overridden for dynamic cooldown calculation instead of static {@link Config}.<br>
      * @param event context for overriding
      * @return minimal duration between uses of the same command by the same user
      */
@@ -149,7 +149,7 @@ public abstract class AbstractCommand {
     }
 
     /**
-     * Could be overridden for dynamic needed discord permissions calculation instead of static {@link Config}.<br/>
+     * Could be overridden for dynamic needed discord permissions calculation instead of static {@link Config}.<br>
      * @param event context for overriding
      * @return needed discord permission to execute the command
      */
@@ -159,9 +159,9 @@ public abstract class AbstractCommand {
 
     /**
      * Designed to be overridden if {@link CommandArgumentConfigBuilder#enableCustomArgumentChoosing(boolean)}
-     * of any argument of the command is set to true. <br/>
+     * of any argument of the command is set to true. <br>
      * This method will have to choose amount of consecutive symbols right from the start of a string, the symbols
-     * will be value of the argument.<br/>
+     * will be value of the argument.<br>
      * The method will be given {@link MessageReceivedEvent} for context, a String which represents
      * the rest of unprocessed arguments sent by user, and ID of argument being processed.
      *

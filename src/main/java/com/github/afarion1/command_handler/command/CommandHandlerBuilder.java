@@ -15,8 +15,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Represents configuration of Command handler for convenient instance building.<br/>
- * Parameters set through methods override the ones from config file. <br/>
+ * Represents configuration of Command handler for convenient instance building.<br>
+ * Parameters set through methods override the ones from config file. <br>
  */
 public final class CommandHandlerBuilder {
     private static final String KEY_PREFIX = "commands_prefix";
@@ -40,13 +40,13 @@ public final class CommandHandlerBuilder {
 
 
     /**
-     * Creates fluent configuration object for CommandHandler instance creation.<br/>
+     * Creates fluent configuration object for CommandHandler instance creation.<br>
      * Equivalent of {@link #CommandHandlerBuilder(boolean)} with parameter true. A configuration file will be created
      * in root directory, to prevent the file creation use {@link #CommandHandlerBuilder(boolean)} with parameter
      * false. CommandHandler's parameters from the configuration are overridden by parameters set using methods of
-     * the {@link CommandHandlerBuilder}.<br/>
+     * the {@link CommandHandlerBuilder}.<br>
      * Before calling {@link #build()} to create {@link CommandHandler} instance, JDA should be set using
-     * {@link #setJda(JDA)} <br/>
+     * {@link #setJda(JDA)} <br>
      * Default values:
      * <ul>
      *     <li>Command prefix is ~</li>
@@ -65,12 +65,12 @@ public final class CommandHandlerBuilder {
     }
 
     /**
-     * Creates fluent configuration object for CommandHandler instance creation.<br/>
+     * Creates fluent configuration object for CommandHandler instance creation.<br>
      * The single parameter determines whether a configuration file should be created in root directory.
      * CommandHandler's parameters from the configuration are overridden by parameters set using methods of
-     * the {@link CommandHandlerBuilder}.<br/>
+     * the {@link CommandHandlerBuilder}.<br>
      * Before calling {@link #build()} to create {@link CommandHandler} instance, JDA should be set using
-     * {@link #setJda(JDA)} <br/>
+     * {@link #setJda(JDA)} <br>
      * Default values:
      * <ul>
      *     <li>Command prefix is ~</li>
@@ -152,7 +152,7 @@ public final class CommandHandlerBuilder {
 
 
     /**
-     * Setting to false will prevent outdated cooldown entries from being deleted from the DB. <br/>
+     * Setting to false will prevent outdated cooldown entries from being deleted from the DB. <br>
      * True by default.
      * @return instance of {@link CommandHandlerBuilder}. Useful for chaining
      */

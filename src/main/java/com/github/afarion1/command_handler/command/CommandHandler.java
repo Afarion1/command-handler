@@ -72,7 +72,7 @@ public final class CommandHandler {
 
 
     /**
-     * Initializes and starts listening for messages. <br/>
+     * Initializes and starts listening for messages. <br>
      * Commands should be registered before calling the method.
      * @see #registerCommand(Class, Function, CommandConfig)
      * @see Command
@@ -106,10 +106,10 @@ public final class CommandHandler {
     }
 
     /**
-     * Registers a command to be handled.<br/>
-     * {@link Command} annotation could be used alternatively, it is usually more convenient.<br/>
+     * Registers a command to be handled.<br>
+     * {@link Command} annotation could be used alternatively, it is usually more convenient.<br>
      * Unlike using annotation to register, using the method provides an option to use a different
-     * from the {@link AbstractCommand} super class constructor for the command class. <br/>
+     * from the {@link AbstractCommand} super class constructor for the command class. <br>
      * Function and config parameters could be null, overloaded versions of the method are present
      * for convenience.
      * @param aClass class of the command
@@ -189,7 +189,7 @@ public final class CommandHandler {
 
     /**
      * Useful for custom command list implementation.
-     * @return unmodifiable list of all {@link CommandConfig} with {@Link CommandListType#VISIBLE}
+     * @return unmodifiable list of all {@link CommandConfig} with {@link CommandListType#LISTED}
      */
     public List<CommandConfig> getVisibleCommandConfigList() {
         return Collections.unmodifiableList(visibleCommandConfigList);

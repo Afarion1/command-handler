@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 
 /**
  * A sub-builder for {@link CommandConfigBuilder}, used in
- * {@link CommandConfigBuilder#addArguments(CommandArgumentConfigBuilder...)}<br/>
+ * {@link CommandConfigBuilder#addArguments(CommandArgumentConfigBuilder...)}<br>
  * Changes to this builder won't affect arguments configuration once
  * {@link CommandConfigBuilder#build()} is called.
  */
@@ -72,8 +72,8 @@ public final class CommandArgumentConfigBuilder {
     }
 
     /**
-     * Adds predicates that will be used to validate string value. <br/>
-     * This option cannot be used if any of the following parameters is set to true:<br/>
+     * Adds predicates that will be used to validate string value. <br>
+     * This option cannot be used if any of the following parameters is set to true:<br>
      * <ul>
      *     <li>{@link #enableCustomArgumentChoosing(boolean)}</li>
      *     <li>{@link #setParseToDouble(boolean)}</li>
@@ -86,7 +86,7 @@ public final class CommandArgumentConfigBuilder {
     }
 
     /**
-     * Adds predicates that will be used to validate double value.<br/>
+     * Adds predicates that will be used to validate double value.<br>
      * The argument must also be set to {@link #setParseToDouble(boolean)}
      */
     public CommandArgumentConfigBuilder addDoubleValidators(DoublePredicate... validators) {
@@ -109,7 +109,7 @@ public final class CommandArgumentConfigBuilder {
     /**
      * When set to true the argument will be optional and could be omitted. There should be no non optional arguments
      * after an optional argument. In other words, optional arguments could be only at the end of all arguments, and
-     * could be consecutive. <br/>
+     * could be consecutive. <br>
      * If an argument is set to be optional, then it's default value could be set as well, using one of the following
      * methods:
      * <ul>
@@ -126,8 +126,8 @@ public final class CommandArgumentConfigBuilder {
     }
 
     /**
-     * When set to true the argument will have to be typed in quotes (" ").<br/>
-     * This is useful for separation of arguments with spaces.<br/>
+     * When set to true the argument will have to be typed in quotes (" ").<br>
+     * This is useful for separation of arguments with spaces.<br>
      */
     public CommandArgumentConfigBuilder setInQuotes(boolean bool) {
         this.inQuotes = bool;
@@ -142,7 +142,7 @@ public final class CommandArgumentConfigBuilder {
 
     /**
      * Sets default value that will be used if the argument is omitted. This method could be used if the argument is set
-     * to be optional.<br/>
+     * to be optional.<br>
      * @see CommandArgumentConfigBuilder#setOptional
      */
     @NotNull
@@ -153,7 +153,7 @@ public final class CommandArgumentConfigBuilder {
 
     /**
      * Sets default value that will be used if the argument is omitted. This method could be used if the argument is set
-     * to be optional and to be parsed to Double.<br/>
+     * to be optional and to be parsed to Double.<br>
      * @see CommandArgumentConfigBuilder#setParseToDouble
      * @see CommandArgumentConfigBuilder#setOptional
      */
@@ -165,7 +165,7 @@ public final class CommandArgumentConfigBuilder {
 
     /**
      * When set to true the argument's value will be parsed to Double and will be accessible using
-     * {@link CommandArguments#getDoubleArgumentValue}.<br/>
+     * {@link CommandArguments#getDoubleArgumentValue}.<br>
      */
     public CommandArgumentConfigBuilder setParseToDouble(boolean bool) {
         this.parseToDouble = bool;
