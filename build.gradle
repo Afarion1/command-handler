@@ -1,10 +1,10 @@
-plugins {
-    id 'java'
-    id 'application'
-}
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
 
 group = 'com.github.afarion1'
-version '0.1'
+archivesBaseName = "command-handler"
+version version
 
 sourceCompatibility = 1.8
 
@@ -13,13 +13,157 @@ repositories {
 }
 
 dependencies {
+    api 'net.dv8tion:JDA:[4.0,5.0)'
     implementation 'org.xerial:sqlite-jdbc:3.28.0'
     implementation 'org.slf4j:slf4j-simple:1.6.1'
     implementation 'it.unimi.dsi:fastutil:8.2.1'
     implementation 'org.reflections:reflections:0.9.10'
     implementation 'org.apache.commons:commons-lang3:3.6'
-    implementation 'net.dv8tion:JDA:3.8.3_463'
+    testImplementation 'ch.qos.logback:logback-classic:1.2.3'
+    testImplementation 'junit:junit:4.12'
+}
+
+sourceSets {
+    main {
+        java {
+            exclude 'logback.xml'
+            exclude '**/test/**'
+            exclude '**/example/**'
+        }
+    }
+}
+
+task sourceJar(type: Jar) {
+    classifier "sources"
+    from sourceSets.main.allJava
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier "javadoc"
+    from javadoc.destinationDir
+}
+
+artifacts {
+//    archives jar
+    archives sourceJar
+    archives javadocJar
 }
 
 
-compileJava.options.encoding = 'UTF-8'
+signing {
+    sign configurations.archives
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            customizePom(pom)
+            groupId 'com.github.afarion1'
+            artifactId 'command-handler'
+            version version
+
+            from components.java
+
+            // create the sign pom artifact
+            pom.withXml {
+                def pomFile = file("${project.buildDir}/generated-pom.xml")
+                writeTo(pomFile)
+                def pomAscFile = signing.sign(pomFile).signatureFiles[0]
+                artifact(pomAscFile) {
+                    classifier = null
+                    extension = 'pom.asc'
+                }
+            }
+
+            artifact(sourceJar) {
+                classifier = 'sources'
+            }
+            artifact(javadocJar) {
+                classifier = 'javadoc'
+            }
+
+            // create the signed artifacts
+            project.tasks.signArchives.signatureFiles.each {
+                artifact(it) {
+                    def matcher = it.file =~ /-(sources|javadoc)\.jar\.asc$/
+                    if (matcher.find()) {
+                        classifier = matcher.group(1)
+                    } else {
+                        classifier = null
+                    }
+                    extension = 'jar.asc'
+                }
+            }
+
+        }
+    }
+    repositories {
+        maven {
+            url "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+            credentials {
+                username sonatypeUsername
+                password sonatypePassword
+            }
+        }
+    }
+}
+
+
+def customizePom(pom) {
+    pom.withXml {
+        def root = asNode()
+
+        root.dependencies.removeAll { dep ->
+            dep.scope == "test"
+        }
+
+        // add all items necessary for maven central publication
+        root.children().last() + {
+            resolveStrategy = DELEGATE_FIRST
+
+            description 'Configure command handl'
+            name 'Command Handler for JDA'
+            url 'https://github.com/afarion1/command-handler'
+            organization {
+                name 'com.github.afarion1'
+                url 'https://github.com/afarion1'
+            }
+            issueManagement {
+                system 'GitHub'
+                url 'https://github.com/Afarion1/command-handler/issues'
+            }
+            licenses {
+                license {
+                    name 'MIT License'
+                    url 'https://github.com/Afarion1/command-handler/blob/master/LICENSE'
+                    distribution 'repo'
+                }
+            }
+            scm {
+                url 'https://github.com/Afarion1/command-handler'
+                connection 'scm:git:git://github.com/afarion1/command-handler.git'
+                developerConnection 'scm:git:ssh://git@github.com:afarion1/command-handler.git'
+            }
+            developers {
+                developer {
+                    id 'Afarion1'
+                    name 'Maksim Filatov'
+                    email '4farion@gmail.com'
+                }
+            }
+        }
+    }
+}
+
+
+model {
+    tasks.generatePomFileForMavenJavaPublication {
+        destination = file("$buildDir/generated-pom.xml")
+    }
+    tasks.publishMavenJavaPublicationToMavenLocal {
+        dependsOn project.tasks.signArchives
+    }
+    tasks.publishMavenJavaPublicationToMavenRepository {
+        dependsOn project.tasks.signArchives
+    }
+}
