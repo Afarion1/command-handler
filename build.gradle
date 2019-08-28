@@ -23,28 +23,24 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-sourceSets {
-    main {
-        java {
-            exclude 'logback.xml'
-            exclude '**/test/**'
-            exclude '**/example/**'
-        }
-    }
+
+jar {
+    exclude '**/example/**'
 }
 
 task sourceJar(type: Jar) {
     classifier "sources"
     from sourceSets.main.allJava
+    exclude '**/example/**'
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier "javadoc"
     from javadoc.destinationDir
+    exclude '**/example/**'
 }
 
 artifacts {
-//    archives jar
     archives sourceJar
     archives javadocJar
 }
