@@ -360,6 +360,10 @@ public final class CommandHandler {
                 fieldContent = configField.get(this);
             } catch (IllegalAccessException e) {
                 throw new RuntimeException("Unable to get CommandConfig", e);
+            } catch (IllegalArgumentException e){
+                throw new RuntimeException("Unable to get CommandConfig. The config MUST be provided using STATIC" +
+                        " field or STATIC method. Alternatively it could be provided using " +
+                        " CommandHandler::registerCommand.", e);
             }
 
             if (fieldContent instanceof CommandConfig)
@@ -377,9 +381,10 @@ public final class CommandHandler {
             try {
                 return aClass.getConstructor(CommandHandler.class).newInstance(ch);
             } catch (Exception e) {
-                throw new RuntimeException("Unable to create an instance of command. (If command has no constructor " +
-                        "without parameters, then a supplier should be provided using another overloaded version of " +
-                        "register method)", e);
+                throw new RuntimeException("Unable to create an instance of command. A command registered using" +
+                        " @Command annotation MUST have a PUBLIC constructor with SINGLE PARAMETER of type " +
+                        "CommandHandler. Or you can use CommandHandler::registerCommand method, providing " +
+                        "a function that would supply instances of the command.", e);
             }
         };
     }
