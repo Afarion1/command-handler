@@ -1,3 +1,5 @@
+# The project might be discontinued due to [official jda utilities](https://github.com/JDA-Applications/JDA-Utilities) that has command package, which pretty much does the same.
+I am yet to dig into that and try the utils myself. I may continiue the project if it turns out that the official package is lower level and/or has missing features.
 # Command Handler for JDA 
 ***The handler is in BETA state. It might contain bugs and it's API might change.*** <br/>
 The handler provides functionality to quickly set up commands for a Discord bot.
